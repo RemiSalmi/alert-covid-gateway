@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 8082
 spring:
   cloud:
     gateway:
@@ -17,10 +17,10 @@ spring:
           predicates:
             - Path=/stream/location/**
         - id: notification_service
-            uri: 'http://146.59.234.45:8089'
-            predicates:
-              - Path=/notification/**
+          uri: 'http://146.59.234.45:8089'
+          predicates:
+            - Path=/notification/**
         - id: location_service
-            uri: 'http://146.59.234.45:8091'
-            predicates:
-              - Path=/locations/**
+          uri: 'http://146.59.234.45:8091'
+          predicates:
+            - Path=/locations/**
